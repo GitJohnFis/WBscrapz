@@ -1,8 +1,6 @@
 # WBscrapz
 scallops of the BIG CORP ads
 
-# Web Crawler CLI
-
 A beginner-friendly Golang command-line tool that crawls websites and generates a report of internal links. Perfect for learning Go, CLI development, and open-source collaboration.
 
 ## Project Overview
