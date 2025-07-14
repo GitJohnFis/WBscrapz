@@ -1,7 +1,6 @@
 # WBscrapz
 scallops of the BIG CORP ads
 
-# Decos Chatbot
 
 A beginner-friendly, Golang-based chatbot project that provides a REST API for managing decoration-themed items. Built with [Gin-gonic](https://github.com/gin-gonic/gin), Decos helps users explore, filter, and calculate decoration options through a simple API.
 
