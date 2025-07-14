@@ -1,80 +1,80 @@
 # WBscrapz
 scallops of the BIG CORP ads
 
+# Web Crawler CLI
 
-A beginner-friendly, Golang-based chatbot project that provides a REST API for managing decoration-themed items. Built with [Gin-gonic](https://github.com/gin-gonic/gin), Decos helps users explore, filter, and calculate decoration options through a simple API.
+A beginner-friendly Golang command-line tool that crawls websites and generates a report of internal links. Perfect for learning Go, CLI development, and open-source collaboration.
 
 ## Project Overview
 
-Decos is designed to showcase how to build a RESTful chatbot backend in Go. The API lets users:
-- List and filter decoration items
-- Calculate decoration costs
-- Interact with chatbot endpoints
-
-The project is ideal for learning Go web development, REST API design, and open-source collaboration.
+The Web Crawler CLI is a Go application designed to help developers and website owners analyze and list all internal links on a given website. This tool is ideal for SEO audits, site maintenance, and exploring web architecture.
 
 ## Installation
+
+### Prerequisites
+
+- **Go toolchain (version 1.24+)**  
+  [Download Go](https://golang.org/doc/install)
+- **Boot.dev CLI** (optional for Boot.dev learners)  
+  [Boot.dev CLI Guide](https://github.com/Bootdotdev/cli)
+- **Bash-like environment**  
+  - Native Linux/macOS terminal is recommended
+  - For Windows: [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install) is highly recommended
+
+### Steps
 
 1. **Clone the repository:**
     ```sh
     git clone https://github.com/GitJohnFis/WBscrapz.git
     cd WBscrapz
     ```
-2. **Install Go (>=1.20):**  
-   [Install Go](https://golang.org/doc/install)
-3. **Install dependencies:**
+2. **Install dependencies:**
     ```sh
     go mod tidy
     ```
-4. **Run the server:**
+3. **Build the CLI tool:**
     ```sh
-    go run main.go
+    go build -o webcrawler
+    ```
+4. **Verify installation:**
+    ```sh
+    ./webcrawler --help
     ```
 
 ## Usage
 
-Once the server is running on `localhost:8080`, you can interact with the API using curl or any HTTP client.
-
-### Example: List Decorations
+To crawl a website and generate an internal links report, run:
 
 ```sh
-curl -X GET "http://localhost:8080/decorations"
+./webcrawler https://example.com
 ```
 
-### Example: Filter Decorations by Price
+This will output a list of all internal links found on the site.
+
+### Additional Options
 
 ```sh
-curl -X GET "http://localhost:8080/decorations?min_price=10&max_price=50"
+./webcrawler --depth 2 https://example.com
 ```
 
-### Example: Calculate Decoration Cost
+- `--depth`: Limit the crawl depth (default: unlimited)
+
+For more options, use:
 
 ```sh
-curl -X POST "http://localhost:8080/calculate" \
-  -H "Content-Type: application/json" \
-  -d '{"decoration_id":1,"quantity":3}'
+./webcrawler --help
 ```
-
-## API Endpoints
-
-| Endpoint                | Method | Description                               |
-|-------------------------|--------|-------------------------------------------|
-| `/decorations`          | GET    | List all decoration items                 |
-| `/decorations`          | GET    | Filter decorations by price, category, etc|
-| `/decorations/:id`      | GET    | Get details for a specific decoration     |
-| `/calculate`            | POST   | Calculate cost for given decorations      |
-
-See [OpenAPI docs](./docs/openapi.yaml) for full details.
 
 ## Contributing
 
 We welcome contributions from beginners and experienced developers!  
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-- Fork the repo and create your branch
-- Write clear code and comments
-- Format code with `go fmt` and lint with `golint`
-- Submit a pull request referencing relevant issues
+1. Fork the repository
+2. Create a feature branch
+3. Write clear code and comments
+4. Format and lint your code
+5. Submit a pull request referencing related issues
 
 ## License
 
